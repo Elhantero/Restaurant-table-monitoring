@@ -1,6 +1,7 @@
-import { createSlice, createAsyncThunk, AsyncThunkAction } from '@reduxjs/toolkit';
+import {createSlice} from '@reduxjs/toolkit';
 import keyBy from 'lodash/keyBy';
 import tableDataGenerator from "../helpers/tableDataGenerator";
+import {RootState} from "../store";
 
 const tablesSlice = createSlice({
   name: 'tables',
@@ -12,7 +13,7 @@ const tablesSlice = createSlice({
   },
   reducers: {
     // no server, just emulation
-    fetchTablesData: (state, action) => {
+    fetchTablesData: (state: RootState) => {
       const data = keyBy(tableDataGenerator(), 'id');
       const order = Object.keys(data);
       order.sort((a, b) => Number(a) - Number(b));
@@ -20,10 +21,9 @@ const tablesSlice = createSlice({
       state.order = order;
       state.status = 'loaded';
     },
-    changeWarningByTableId: (state, action) => {
-      const {id, warning} : { id: string, warning: boolean } = action.payload;
-      console.log(id, warning, 'tableSlices.ts', 26)
-      if(id) {
+    changeWarningByTableId: (state: RootState, action) => {
+      const {id, warning}: { id: string, warning: boolean } = action.payload;
+      if (id) {
         state.data[id] = {
           ...state.data[id],
           warning,

@@ -5,10 +5,10 @@ import tableTypeToSeatsCountMap from "../constants/tableTypeToSeatsCountMap";
 const getRandomNumFromInterval = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 const allTypesArr = Object.keys(tableTypes);
 export default () => {
-    const tableCount =  getRandomNumFromInterval(5, 20);
-    const res = [...Array(tableCount).keys()]
+    const tableCount = getRandomNumFromInterval(5, 20);
+    return [...Array(tableCount).keys()]
         .map(o => {
-            const id = (o+1).toString();
+            const id = (o + 1).toString();
             const type = allTypesArr[getRandomNumFromInterval(0, allTypesArr.length - 1)];
             const name = tableTypeToNameMap?.[type] || tableTypeToNameMap?.default;
             const maxGuests = tableTypeToSeatsCountMap?.[type] || tableTypeToSeatsCountMap?.default;
@@ -22,6 +22,4 @@ export default () => {
                 maxGuests,
             }
         })
-    console.log(res, 'tableDataGenerator.ts', 23)
-    return res;
 }

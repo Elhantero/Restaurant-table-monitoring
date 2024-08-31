@@ -1,5 +1,5 @@
 import React from 'react';
-import { Footer } from "../../styled/styledComponents";
+import { Footer } from "./styled/styledComponents";
 
 export default () => (
     <Footer id="pageFooter">

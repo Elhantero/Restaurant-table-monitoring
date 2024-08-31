@@ -14,9 +14,11 @@ export const BodyWrapper = styled.div`
     margin: 0;
     color: #2B3674;
     font-family: sans-serif;
+
     > div {
         padding: 15px;
     }
+
     @media (max-width: 768px) {
         grid-template-areas: 
           "header"
@@ -35,6 +37,7 @@ export const Header = styled.div`
     font-size: 24px;
     font-weight: bold;
     gap: 20px;
+
     a {
         text-decoration: none;
         color: #5667c0;
