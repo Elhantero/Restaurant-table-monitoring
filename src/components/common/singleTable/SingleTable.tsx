@@ -83,7 +83,7 @@ const SingleTable = ({tableId, singleTable}: { tableId: string, singleTable: Tab
                             id={`warning_${tableId}`}
                         />
                         <label htmlFor={`warning_${tableId}`}>
-                            <span>{warning ? 'Fix warning' : 'Mark it as warning'}</span>
+                            <span>{warning ? 'Disable checkbox to fix' : 'Mark it as warning'}</span>
                         </label>
                     </div>
                 </BotLine>
