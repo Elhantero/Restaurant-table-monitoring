@@ -31,7 +31,7 @@ const Main = ({ tablesOrder } : { tablesOrder: string[] }) => {
 
     return (
         <Layout>
-            {tablesOrder.map(tableId => <SingleTable tableId={tableId}/>)}
+            {tablesOrder.map(tableId => <SingleTable key={tableId} tableId={tableId}/>)}
         </Layout>
     );
 };
