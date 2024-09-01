@@ -41,7 +41,8 @@ const SingleTable = ({tableId, singleTable}: { tableId: string, singleTable: Tab
             <TopLine type={type}>
                 <div>
                     <div className='name'>{name}</div>
-                    <div className='guests'>Guests: {guests} of {maxGuests}</div>
+                    <div className={guests ? 'guests' : ''}>Guests: {guests} of {maxGuests}</div>
+                    {!guests && (<div className="free">free</div>)}
                 </div>
 
                 <div>

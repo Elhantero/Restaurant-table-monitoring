@@ -83,7 +83,11 @@ export const TopLine = styled.div`
         width: 100%;
         display: grid;
         gap: 20px;
-        grid-template-columns: 200px 200px;
+        grid-template-columns: 200px 150px 100px;
+        div {
+            padding: 5px;
+            width: fit-content;
+        }
     }
 
     > div:last-child {
@@ -94,15 +98,15 @@ export const TopLine = styled.div`
     }
 
     .name {
-        padding: 5px;
         background-color: ${props => props.type ? tableTypeToColorMap[props.type] : tableTypeToColorMap.default};
-        width: fit-content;
     }
 
     .guests {
-        padding: 5px;
         background-color: #f1dab6;
-        width: fit-content;
+    }
+    
+    .free {
+        background-color: greenyellow;
     }
 
     .warning {
